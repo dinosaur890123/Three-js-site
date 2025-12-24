@@ -12,6 +12,11 @@ const material = new THREE.MeshBasicMaterial( { map: texture } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
+const ringGeometry = new THREE.TorusGeometry( 1.2, 0.15, 16, 60 );
+const ringMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } );
+const ring = new THREE.Mesh( ringGeometry, ringMaterial );
+scene.add( ring );
+
 camera.position.z = 5;
 
 function animate() {
@@ -20,6 +25,9 @@ function animate() {
 
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
+
+  ring.rotation.x += 0.005;
+  ring.rotation.y += 0.01;
 
   renderer.render( scene, camera );
 
