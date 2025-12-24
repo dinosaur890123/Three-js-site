@@ -7,7 +7,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const texture = new THREE.TextureLoader().load( './banana.webp' );
+const texture = new THREE.TextureLoader().load( '/banana.webp' );
 const material = new THREE.MeshBasicMaterial( { map: texture } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
